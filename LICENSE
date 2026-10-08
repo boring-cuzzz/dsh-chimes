@@ -19,16 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-
-## 素材许可（Audio assets）
-
-`assets/` 下的示例音频（`sample-startup.wav`、`sample-done.wav`）由 ffmpeg 从纯正弦波合成，
-**不含任何第三方采样或素材**，因此以 **CC0-1.0（公有领域奉献）** 发布，可任意使用、修改、
-再分发，无需署名：
-
-https://creativecommons.org/publicdomain/zero/1.0/
-
-本项目**刻意不附带**任何来源不明的音效素材；使用者请自备音频，详见
-[`docs/音效与版权.md`](docs/音效与版权.md)。
