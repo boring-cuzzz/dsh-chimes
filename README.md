@@ -9,9 +9,11 @@ Two chimes for the **DeepSeek Harness desktop app**: one when the app **opens**,
 ![assets](https://img.shields.io/badge/assets-CC0-lightgrey)
 ![deps](https://img.shields.io/badge/dependencies-0-brightgreen)
 
-> The repository **ships six CC0 example chimes** synthesized with ffmpeg, and supports **your own
-> audio** — switchable from a dropdown in the control panel. It deliberately contains no
-> third-party sound material; see [docs/音效与版权.md](docs/音效与版权.md) (Chinese) for why.
+> The repository **ships nine example chimes** — six CC0 tones synthesized with ffmpeg plus three
+> the author picked and confirmed free of third-party copyright claims (**those two are the
+> out-of-the-box defaults**) — and it supports **your own audio**, switchable from a dropdown in the
+> control panel. It deliberately contains no sound material of unknown provenance; see
+> [docs/音效与版权.md](docs/音效与版权.md) (Chinese) for the reasoning.
 
 ---
 
@@ -56,7 +58,7 @@ After installing, open the **Plugins page in the sidebar → Chimes** (on some c
 | Control | What it does |
 |---|---|
 | **Startup / Completion switches** | Enable each chime independently — takes effect **immediately**, no restart |
-| **Sound library dropdown** | Switch between the six bundled CC0 examples and **your own sounds** |
+| **Sound library dropdown** | Switch between the nine bundled examples and **your own sounds** |
 | **Preview** | Plays through the **real playback path**, not a browser simulation |
 | **Choose audio…** | Any mp3 / m4a / wav / ogg / flac — **converted to WAV in the browser**, so ffmpeg is not required |
 | **Delete** | Removes entries from "my sounds" only; bundled examples are protected |
