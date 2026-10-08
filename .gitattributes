@@ -1,0 +1,25 @@
+# 行尾与编码策略：仓库内存 LF，检出时按类型处理
+* text=auto eol=lf
+
+# Windows 脚本统一 CRLF：
+#   - cmd.exe 对「LF-only 且含 goto/call 标签」的批处理会字节错位、执行到行中间（实测过）
+#   - PowerShell 两者都能跑，统一 CRLF 更稳
+*.ps1 text eol=crlf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# 二进制：禁止任何行尾/编码转换，否则有损坏风险
+*.wav binary
+*.mp3 binary
+*.png binary
+*.ico binary
+*.exe binary
+
+# ⚠️ 无法用 .gitattributes 表达、但必须遵守的约定：
+#   scripts/*.ps1 必须保持 UTF-8 **带 BOM**。
+#   原因：Windows PowerShell 5.1 会把「无 BOM 的 UTF-8」按 ANSI 解析，
+#   脚本里的中文会导致语法崩溃（实测报 Missing closing '}' 之类）。
+#   因此不要用会去掉 BOM 的编辑器重存脚本；如果必须转换，请确认 BOM 仍在。
+#
+# 反向约定：脚本**生成**的 package.json / cordis.patch.yml / *.js 必须**无 BOM**，
+# 否则 DSH loader 解析 JSON 会失败、插件静默不加载（脚本内已用 UTF8Encoding($false) 保证）。

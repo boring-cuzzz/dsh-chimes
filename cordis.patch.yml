@@ -1,0 +1,24 @@
+# dsh-chimes — bundle layer
+#
+# 同一个包挂载两次，靠 config.kind 区分（官方 base patch 也是这么挂 tool-subagent
+# 与 tool-subagent-fork 的：同 name、不同 config）。两行各自独立启停。
+#
+# 可调字段（面板会写 $DSH_HOME/chimes-state.json 覆盖这里的默认值）：
+#   kind        'startup' | 'done'        必填：这一行是哪个音效
+#   enabled     boolean                   总开关
+#   wavPath     string                    指定音频（优先于 assets/ 下的文件）
+#   delayMs     number  启动音：界面就绪后再等多久播
+#   waitMs     number   启动音：等界面就绪的上限，超时兜底播
+#   cooldownMs  number  完成音：两次之间的最小间隔
+#   minTurnMs   number  完成音：只对耗时超过该值的回合响
+
+- insert:
+    - id: startup-chime
+      name: dsh-chimes
+      config:
+        kind: startup
+
+    - id: done-chime
+      name: dsh-chimes
+      config:
+        kind: done

@@ -1,0 +1,31 @@
+node_modules/
+npm-debug.log*
+pnpm-debug.log*
+
+# 运行时诊断日志（本插件会往 $DSH_HOME 写，不要在仓库里留一份）
+*.log
+*-chime.log
+
+# 使用者自备的音效与本地素材：放这些目录里，仓库不收录
+# （原因见 docs/音效与版权.md —— 第三方音频会导致 DMCA 风险）
+/local/
+/assets/private/
+
+# ⚠️ 关键：这两个是「你自己当前生效的音效」，由安装器或控制面板写入。
+# 它们**永远不能被提交**——它们正是我们刻意不发布的第三方素材。
+# 插件的解析顺序是：wavPath → 这两个文件 → sample-*.wav（CC0 示例音）。
+/assets/chime.wav
+/assets/success.wav
+/assets/chime.prev.wav
+/assets/success.prev.wav
+/assets/*.tmp
+
+
+# 编辑器与系统
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
